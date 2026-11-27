@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+  <defs>
+    <linearGradient id="reuse-body" x1="0.15" y1="0" x2="0.85" y2="1"><stop stop-color="#ffd770"/><stop offset="1" stop-color="#f29a0e"/></linearGradient>
+    <linearGradient id="reuse-deep" x1="0.15" y1="0" x2="0.85" y2="1"><stop stop-color="#f9bc44"/><stop offset="1" stop-color="#a57023"/></linearGradient>
+    <linearGradient id="reuse-gold" x1="0.15" y1="0" x2="0.85" y2="1"><stop stop-color="#ffe27d"/><stop offset="1" stop-color="#f6a81c"/></linearGradient>
+    <filter id="reuse-sh" filterUnits="userSpaceOnUse" x="0" y="0" width="36" height="36" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/><feOffset dy="1.7" result="far"/><feFlood flood-color="#7a582f" flood-opacity="0.14"/><feComposite in2="far" operator="in" result="far-shadow"/><feGaussianBlur in="SourceAlpha" stdDeviation="0.5"/><feOffset dy="0.6" result="near"/><feFlood flood-color="#7a582f" flood-opacity="0.12"/><feComposite in2="near" operator="in" result="near-shadow"/><feMerge><feMergeNode in="far-shadow"/><feMergeNode in="near-shadow"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="reuse-sh-s" filterUnits="userSpaceOnUse" x="0" y="0" width="36" height="36" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceAlpha" stdDeviation="0.8"/><feOffset dy="0.9" result="far"/><feFlood flood-color="#7a582f" flood-opacity="0.12"/><feComposite in2="far" operator="in" result="far-shadow"/><feGaussianBlur in="SourceAlpha" stdDeviation="0.35"/><feOffset dy="0.4" result="near"/><feFlood flood-color="#7a582f" flood-opacity="0.1"/><feComposite in2="near" operator="in" result="near-shadow"/><feMerge><feMergeNode in="far-shadow"/><feMergeNode in="near-shadow"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <g transform="translate(1.44 1.44) scale(0.92)">
+  <g filter="url(#reuse-sh)"><path d="M12.5 5H21L28 12V26.5A4.5 4.5 0 0 1 23.5 31H12.5A4.5 4.5 0 0 1 8 26.5V9.5A4.5 4.5 0 0 1 12.5 5Z" fill="url(#reuse-body)"/></g><path d="M21 5V9A3 3 0 0 0 24 12H28Z" fill="#ffffff" fill-opacity="0.4"/><path d="M23.36 22.55A5.7 5.7 0 1 1 21.27 15.93" fill="none" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round"/><path d="M22.99 13.47L24.1 17.91L19.55 18.39Z" fill="#ffffff" stroke="#ffffff" stroke-width="1.03" stroke-linejoin="round"/>
+  </g>
+</svg>

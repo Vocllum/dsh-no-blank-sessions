@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "No blank sessions",
+    "description": "Makes New Session reuse an existing blank draft in the same workspace instead of creating another empty session. A draft counts as blank when it was never used, holds only setup choices (agent preset, approval policy, model, permission preset, sandbox mode) and is neither pinned nor archived. Several New Session requests that arrive at once share a single lookup."
+  }
+}

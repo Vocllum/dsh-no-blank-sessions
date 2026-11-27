@@ -1,0 +1,42 @@
+{
+  "name": "@vocllum/dsh-no-blank-sessions",
+  "version": "0.1.0",
+  "description": "Make New Session reuse an existing blank draft session instead of piling up empty ones.",
+  "license": "MIT",
+  "author": "Vocllum",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vocllum/dsh-no-blank-sessions.git"
+  },
+  "homepage": "https://github.com/Vocllum/dsh-no-blank-sessions#readme",
+  "bugs": {
+    "url": "https://github.com/Vocllum/dsh-no-blank-sessions/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "session",
+    "new-session"
+  ],
+  "type": "module",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "engines": {
+    "dsh": ">=0.2.2-rc.5 <0.3.0-0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

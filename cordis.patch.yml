@@ -1,0 +1,3 @@
+- insert:
+    - id: no-blank-sessions
+      name: '@vocllum/dsh-no-blank-sessions'
