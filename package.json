@@ -1,6 +1,6 @@
 {
   "name": "@vocllum/dsh-no-blank-sessions",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Make New Session reuse an existing blank draft session instead of piling up empty ones.",
   "license": "MIT",
   "author": "Vocllum",
@@ -31,6 +31,9 @@
     "locale/*.json",
     "icon.svg"
   ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
   "engines": {
     "dsh": ">=0.2.2-rc.5 <0.3.0-0"
   },

@@ -14,6 +14,7 @@ A session is reused only when all of these hold:
 
 - It was never used: it has no seed, inherits nothing from another session, and is not a subagent or other delegated session.
 - Its history holds nothing but setup choices: agent preset, approval policy, model, permission preset and sandbox mode.
+- Records that DSH and other plugins write during setup do not count as use: slash command records, and queued messages that were cancelled. A message that is still waiting in a queue does count, because the session is about to be used.
 - It is in the same workspace folder, and when you pick an agent preset it has the same one.
 - It is not pinned and not archived.
 
@@ -45,7 +46,11 @@ Remove the plugin. It stores no data, and the original behaviour comes back when
 
 ## Development
 
-There is no automated test suite yet.
+```sh
+node --test test/*.test.mjs
+```
+
+The tests need no dependencies. They run the plugin's `create` and `isBlank` against recorded-shape session histories.
 
 ## License
 

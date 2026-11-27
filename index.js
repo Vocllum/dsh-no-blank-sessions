@@ -5,12 +5,32 @@ const setupEvents = new Set([
   'agent-preset/selected', 'approval/policy', 'model/selection',
   'permission/preset', 'sandbox/mode', 'session/end-seed',
 ]);
+// Records that DSH and other plugins write while a session is still being set up.
+// They are not use: a slash command leaves the events it causes, and a queued
+// message only counts while it is still pending.
+const setupRecords = new Set(['command/run', 'command/done']);
+const inboxSplice = 'agent/inbox/spliced';
 const cordisOriginal = Symbol.for('cordis.original');
+
+// Replays the queue mutations. Unknown targets count as pending, so a log shape
+// this plugin does not understand never makes a session look blank.
+function inboxIsEmpty(events) {
+  const lists = { 'next-turn': [], 'next-step': [] };
+  for (const { type, data } of events) {
+    if (type !== inboxSplice) continue;
+    const list = lists[data?.target];
+    if (list === undefined || !Array.isArray(data.inserted)) return false;
+    list.splice(data.start, data.removedCount ?? 0, ...data.inserted);
+  }
+  return lists['next-turn'].length === 0 && lists['next-step'].length === 0;
+}
 
 function hasUnusedHistory({ header, inheritedEventCount }, events) {
   return header.isSeeded === false && inheritedEventCount === 0
     && (header.delegationDepth ?? 0) === 0 && header.parentSession === undefined
-    && header.origin === undefined && events.every(event => setupEvents.has(event.type));
+    && header.origin === undefined
+    && events.every(event => setupEvents.has(event.type) || setupRecords.has(event.type) || event.type === inboxSplice)
+    && inboxIsEmpty(events);
 }
 
 export function apply(ctx) {
