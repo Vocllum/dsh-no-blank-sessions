@@ -32,11 +32,19 @@
 
 ## 安装
 
+在 DSH 里打开**插件**，点**添加插件**，输入：
+
+```
+github:Vocllum/dsh-no-blank-sessions
+```
+
+或者在终端里：
+
 ```sh
 dsh plugin --profile desktop add "github:Vocllum/dsh-no-blank-sessions"
 ```
 
-`dsh web` 用 `--profile web`。DSH 桌面端：先启动一次，完全退出，运行命令，再重新打开。
+桌面端：先打开一次，完全退出，运行命令，再重新打开。终端里没有 `dsh` 的话，在应用菜单里选**管理 dsh 命令…**安装。`dsh web` 用 `--profile web`。
 
 需要 DSH `>=0.2.2-rc.5 <0.3.0`。插件包装了 DSH 会话控制器的两处内部接口（`create` 和 `agents.isBlank`）；DSH 没有提供它们时，插件只记一条警告，什么都不做。
 

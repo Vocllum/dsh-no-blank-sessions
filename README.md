@@ -32,11 +32,19 @@ Only a New Session you trigger yourself is redirected. Calls from services and f
 
 ## Install
 
+In DSH, open **Plugins**, choose **Add plugin**, and enter:
+
+```
+github:Vocllum/dsh-no-blank-sessions
+```
+
+Or from a terminal:
+
 ```sh
 dsh plugin --profile desktop add "github:Vocllum/dsh-no-blank-sessions"
 ```
 
-Use `--profile web` for `dsh web`. For DSH Desktop, launch it once, quit it fully, run the command, then start it again.
+For DSH Desktop, open it once, quit it fully, run the command, then open it again. If your terminal has no `dsh`, install it from the app menu: **Manage dsh Command…**. Use `--profile web` for `dsh web`.
 
 Requires DSH `>=0.2.2-rc.5 <0.3.0`. The plugin wraps two internals of DSH's session controller (`create` and `agents.isBlank`). If DSH does not provide them, it logs a warning and does nothing.
 
